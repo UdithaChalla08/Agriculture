@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crop Yield Prediction</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="predict-page">
+
+  <div class="form-card">
+    <h2>🌾 Crop Yield Prediction</h2>
+
+    <form method="POST">
+      <label>Rainfall (mm)</label>
+      <input type="number" step="0.01" name="rainfall_mm" required />
+
+      <label>Soil Quality Index</label>
+      <input type="number" step="0.01" name="soil_quality_index" required />
+
+      <label>Farm Size (ha)</label>
+      <input type="number" step="0.01" name="farm_size_hectares" required />
+
+      <label>Sunlight Hours</label>
+      <input type="number" step="0.01" name="sunlight_hours" required />
+
+      <label>Fertilizer (kg)</label>
+      <input type="number" step="0.01" name="fertilizer_kg" required />
+
+      <button type="submit" name="predict">🔍 Predict</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">Predicted Yield: {{ prediction }}</div>
+    {% endif %}
+
+    <h3>💬 Submit Feedback</h3>
+    <form method="POST">
+      <input type="hidden" name="feedback" value="1" />
+
+      <label>Your Name</label>
+      <input type="text" name="name" required />
+
+      <label>Email</label>
+      <input type="email" name="email" required />
+
+      <label>Message</label>
+      <textarea name="message" rows="3" required></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+
+    {% if message %}
+    <div class="message">{{ message }}</div>
+    {% endif %}
+
+    <div class="bottom-link">
+      <a href="/logout">Logout</a>
+    </div>
+  </div>
+
+</body>
+</html>

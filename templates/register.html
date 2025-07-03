@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Crop Yield</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="predict-page">  <!-- Clean background style -->
+  <div class="container">
+    <h2>Create Your Account</h2>
+
+    <form method="POST">
+      <label>Email Address</label>
+      <input type="email" name="email" required />
+
+      <label>Password</label>
+      <input type="password" name="password" required />
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div class="bottom-link">
+      <p>Already have an account? <a href="/login">Login here</a></p>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+      {% for message in messages %}
+        <div class="message">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+  </div>
+</body>
+</html>

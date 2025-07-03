@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Crop Yield</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="login-page">
+  <div class="container">
+    <div class="left">
+      <h1>Welcome<br>Back</h1>
+      <p>Access our intelligent crop yield prediction tool.<br>Sign in to begin forecasting.</p>
+      <div class="social-icons">
+        <span>🌿</span> <span>📈</span> <span>📧</span>
+      </div>
+    </div>
+
+    <div class="right">
+      <h2>Sign In</h2>
+      <form method="POST">
+        <label>Email Address</label>
+        <input type="email" name="email" required />
+        <label>Password</label>
+        <input type="password" name="password" required />
+
+        <div class="extras">
+          <label><input type="checkbox" /> Remember Me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <button type="submit">Sign in now</button>
+      </form>
+
+      <div class="bottom-link">
+        <p>Don’t have an account? <a href="/register" class="register-btn">Register now</a></p>
+      </div>
+
+      <p class="terms">By signing in, you agree to our <a href="#">Terms</a> & <a href="#">Privacy</a>.</p>
+
+      {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+          <div class="message">{{ message }}</div>
+        {% endfor %}
+      {% endwith %}
+    </div>
+  </div>
+</body>
+</html>
