@@ -1,6 +1,7 @@
-flask
-flask_sqlalchemy
-pandas
+Flask
+Flask-SQLAlchemy
+Werkzeug
 joblib
+pandas
 scikit-learn
-werkzeug
+gunicorn
